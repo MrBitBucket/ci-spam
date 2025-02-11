@@ -18,6 +18,7 @@ jobs:
         env:
           CIBW_BUILD: cp313*
 
-      #- uses: actions/upload-artifact@v4
-      #  with:
-      #    path: ./wheelhouse/*.whl
+      - uses: actions/upload-artifact@v4
+        name: "${{ github.event.repository.name }}-${{ matrix.os }}-${{ matrix.cibw_archs }}"
+        with:
+          path: ./wheelhouse/*.whl

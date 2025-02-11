@@ -11,7 +11,6 @@ class bdist_wheel_abi3(bdist_wheel):
             python = "cp36"
             abi = "abi3"
 
-        print('+++++ python=%s abi=%s plat=%s' % (python,abi,plat))
         return python, abi, plat
 
 setup(

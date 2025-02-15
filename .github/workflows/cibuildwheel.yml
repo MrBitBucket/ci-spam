@@ -23,7 +23,9 @@ jobs:
         uses: pypa/cibuildwheel@v2.22.0
         env:
           CIBW_BUILD: cp313-*
-          CIBW_ARCHS_LINUX: ${{ runner.arch == 'X64' && 'auto ppc64le s390x mips64le mips64 risc64' || 'auto armv7l' }}
+          CIBW_ARCHS_LINUX: ${{ runner.arch == 'X64' && 'auto ppc64le s390x riscv64 mips64 mips64el loongarch64' || 'auto armv7l' }}
+linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,
+linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
 
       - uses: actions/upload-artifact@v4
         with:
